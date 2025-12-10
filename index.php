@@ -13,6 +13,7 @@ autoLoginFromCookie($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Updated page title and meta tags to reflect Projects platform instead of Marketplace -->
     <title>Archi.ID - Platform Portfolio Arsitektur</title>
+	<link rel="icon" href="assets/images/favicon.png?v=2" type="image/png">
     <meta name="description" content="Temukan desain rumah impian dengan teknologi 3D viewer 360 derajat">
     <meta name="keywords" content="arsitektur, desain rumah, portfolio">
     <link rel="stylesheet" href="css/style.css">
@@ -24,8 +25,8 @@ autoLoginFromCookie($conn);
     <header class="navbar">
         <div class="container">
             <div class="navbar-brand">
-                <h1><a href="index.php" style="text-decoration: none; color: inherit;">Archi.ID</a></h1>
-            </div>
+            	<h1><a href="index.php" style="text-decoration: none; color: inherit;">Archi.ID</a></h1>
+        	</div>
             <nav class="navbar-menu">
                 <ul>
                     <li><a href="#hero">Home</a></li>

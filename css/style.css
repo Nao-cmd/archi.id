@@ -1268,6 +1268,64 @@ p {
   }
 }
 
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-wrap: wrap; /* Izinkan wrapping */
+    }
+
+    .navbar-menu {
+        display: none; /* Sembunyikan menu secara default di mobile */
+        width: 100%;
+        order: 3; /* Posisikan menu di paling bawah */
+    }
+
+    .navbar-menu.active {
+        display: block; /* Tampilkan jika menu aktif (diklik) */
+    }
+
+    .navbar-menu ul {
+        flex-direction: column;
+        gap: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .navbar-menu ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+    
+    .navbar-auth {
+        order: 2; /* Posisikan Auth/Profil di tengah */
+        gap: 0.5rem;
+    }
+    
+    .navbar-toggle {
+        display: block; /* Tampilkan tombol hamburger di mobile */
+        order: 1; /* Posisikan di kiri (setelah brand) */
+        margin-left: 1rem;
+    }
+
+    .navbar-brand {
+        flex-grow: 1; /* Dorong brand ke kiri */
+    }
+
+    .user-menu {
+        /* Memastikan menu user tetap rapi di mobile */
+        flex-direction: row; 
+    }
+    
+    .user-menu .user-name {
+        display: none; 
+    }
+    
+    .dropdown-menu {
+        /* Sesuaikan posisi dropdown menu agar tidak keluar layar */
+        right: 0;
+        left: auto;
+    }
+}
+
 .marketplace-card-image::after {
   content: attr(data-placeholder);
   position: absolute;

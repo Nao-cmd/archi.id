@@ -81,6 +81,7 @@ $stmt->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Updated page title -->
     <title>Projects - Archi.ID</title>
+    <link rel="icon" href="assets/images/favicon.png?v=2" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .marketplace-hero {

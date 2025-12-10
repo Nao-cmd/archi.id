@@ -3,12 +3,15 @@ session_start();
 require 'config/database.php';
 require 'config/session.php';
 
+requireLogin();
+
 // Validasi ID
 if (!isset($_GET['id'])) {
     die("ID Proyek tidak ditemukan.");
 }
 
 $project_id = intval($_GET['id']);
+$user_id = $_SESSION['user_id']; // Kita tahu user_id karena sudah dicek login
 
 // Ambil path file
 $query = "SELECT model_3d_file, title FROM projects WHERE id = ?";

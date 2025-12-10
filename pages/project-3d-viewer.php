@@ -18,6 +18,7 @@ $stmt->bind_param("i", $project_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $project = $result->fetch_assoc();
+$mysqli->query("UPDATE projects SET view_count = view_count + 1 WHERE id = $project_id");
 $stmt->close();
 $mysqli->close();
 
@@ -51,6 +52,7 @@ $debug_full_path = htmlspecialchars(dirname(__DIR__) . '/' . $model_file);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($project['title']); ?> - 3D Viewer - Archi.ID</title>
+    <link rel="icon" href="../assets/images/favicon.png?v=2" type="image/png">
     <link rel="stylesheet" href="../css/style.css">
     <style>
         body {
@@ -244,6 +246,42 @@ $debug_full_path = htmlspecialchars(dirname(__DIR__) . '/' . $model_file);
 
         .debug-info.show {
             display: block;
+        }
+        
+        @media (max-width: 768px) {
+            /* Posisikan header ke atas secara vertikal dan lebarkan */
+            .viewer-header {
+                flex-direction: column;
+                align-items: flex-start;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                padding: 15px;
+            }
+
+            .viewer-header h2 {
+                font-size: 1.2rem;
+            }
+
+            .close-btn {
+                position: absolute; /* Tombol close diposisikan absolut */
+                top: 15px;
+                right: 15px;
+            }
+
+            /* Sembunyikan viewer-info (informasi proyek) di mobile karena memakan ruang */
+            .viewer-info {
+                display: none;
+            }
+
+            /* Posisikan kontrol di bawah, di tengah */
+            .viewer-controls {
+                bottom: 15px;
+                padding: 10px 20px;
+                font-size: 0.75rem;
+                /* Tambahkan ini jika sebelumnya Anda menyembunyikannya */
+                display: block; 
+            }
         }
     </style>
 </head>
